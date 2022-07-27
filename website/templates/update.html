@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block input %}
+    <div class="content">
+        <div class="row">
+            <form action="/update/{{ user.id }}" method="POST">
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="name" id="name" value="{{ user.name }}" required>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text"  class="form-control" name="birthdate" id="birthdate" value="{{ user.birthdate }}" required>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="submit" class="btn btn-warning" value="Update">
+                        <a class="btn btn-secondary" href="/">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock input %}

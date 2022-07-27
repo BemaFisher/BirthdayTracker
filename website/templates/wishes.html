@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block input %}
+    <div class="content">
+        <h2>Find personalized birthday wishes</h2>
+        <div class="row">
+            <form action="/messages" method="POST">
+                <div class="row">
+                    <div class="col">
+                        <label for="name">Search by keywords</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="e.g., mother, sister, friend">
+                    </div>
+                    <div class="col m-4">
+                        <input type="submit" class="btn btn-success" value="Search">
+                    </div>
+                </div>
+            </form>
+        </div>
+ <!-----MENU FOR SELECT---->
+        <div class="row">
+            <form action="/messages" method="POST">
+                <div class="row">
+                    <div class="col">
+                        <label for="name">Select from the menu</label>
+                        <select class="form-select" aria-label="Default select example" name="name" id="name1">
+                            <option>Select</option>
+                            <option value="mother">mom</option>
+                            <option value="father">dad</option>
+                            <option value="wife">wife</option>
+                            <option value="husband">husband</option>
+                            <option value="son">son</option>
+                            <option value="daughter">daughter</option>
+                            <option value="girlfriend">girlfriend</option>
+                            <option value="boyfriend">boyfriend</option>
+                            <option value="friend">friend</option>
+                            <option value="fiance">fiance</option>
+                            <option value="grandmother">grandmother</option>
+                            <option value="grandfather">grandfather</option>
+                            <option value="grand-daughter">granddaughter</option>
+                            <option value="grand-son">grandson</option>
+                            <option value="teacher">teacher</option>
+                            <option value="colleague">colleague</option>
+                            <option value="boss">boss</option>
+                            <option value="aunt">aunt</option>
+                            <option value="uncle">uncle</option>
+                            <option value="nephew">nephew</option>
+                            <option value="niece">niece</option>
+                            <option value="cousin">cousin</option>
+                            <option value="student">student</option>
+                            <option value="father-in-law">father-in-law</option>
+                            <option value="mother-in-law">mother-in-law</option>
+                            <option value="brother-in-law">brother-in-law</option>
+                            <option value="sister-in-law">sister-in-law</option>
+                        </select>
+                    </div>
+                    <div class="col m-4">
+                        <input type="submit" class="btn btn-success" value="Search">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock input %}
+
+{% block table %}
+    <div class="card card-birthday-message m-4">
+        <h2 class="card-title text-dark text-center">Birthday wishes for {{ keyword }}</h2>
+        <div class="card-body">
+            <h2 class="card-title text-dark"></h2>
+            {% for message in data %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock table %}

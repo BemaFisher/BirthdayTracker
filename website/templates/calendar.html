@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+{% block table %}
+  <section class="p-1">
+      <div class="container">
+          <div class="row row-cols-1 row-cols-md-4 g-3">
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">January</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 1 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title text-light mb-3">February</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 2 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-gift"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">March</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 3 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">April</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 4 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">May</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 5 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">June</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 6 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">July</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 7 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                           <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">August</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 8 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">September</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 9 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">October</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 10 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">November</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 11 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="card h-100 card-month text-light">
+                      <div class="card-body text-center">
+                          <div class="h1 mb-3">
+                            <i class="fa-solid fa-cake-candles"></i>
+                          </div>
+                      <h3 class="card-title mb-3 text-light">December</h3>
+                        {% for user in users %}
+                            {% if user.born_month == 12 %}
+                            <p class="card-text">{{ user.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+{% endblock table %}

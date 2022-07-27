@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block input %}
+    <div class="content">
+        <div class="row">
+            <h2 style="text-align: center">Add a new birthday</h2>
+            <form action="/" method="POST">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="birthdate">Date of Birth</label>
+                        <input type="text"  class="form-control" name="birthdate" id="birthdate"
+                               placeholder='mm-dd-yyyy' required>
+                    </div>
+                    <div class="col m-4">
+                        <input type="submit" class="btn btn-success" value="Add Birthday">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock input %}
+
+{% block table %}
+    <!-----THIS-MONTH BIRTHDAYS---->
+    <div>
+        <h2 class="list-of-birthdays">Upcoming birthdays</h2>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Days Left</th>
+            </tr>
+            {% for user in users %}
+                {% if user.days_till < 31 %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.birthdate }}</td>
+                    <td>
+                        {% if user.days_till == 0 %}
+                            <p class="today">TODAY</p>
+                        {% else %}
+                            {{ user.days_till }}
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+    <!-----LIST OF BIRTHDAYS---->
+    <div>
+        <h2 class="list-of-birthdays">List of all birthdays</h2>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.birthdate }}</td>
+                    <td>{{ user.age }}</td>
+                    <td>
+                        <a tabindex="0" class="btn btn-outline-primary" href="/update/{{user.id}}">Edit</a>
+                    </td>
+                    <td>
+                        <button type='button' class="btn btn-outline-danger" data-bs-toggle="modal"
+                                data-bs-target="#deleteModal">Delete</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- Modal -->
+    {% for user in users %}
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this birthday?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a class="btn btn-outline-danger" href="/delete/{{user.id}}">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock table %}
